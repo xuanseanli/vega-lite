@@ -73,6 +73,10 @@
       {
         "name": "bar_month_temporal_initial",
         "title": "Bar Chart showing Initials of Month Names"
+      },
+      {
+        "name": "bar_axis_width_saving",
+        "title": "Bar Chart with a width-saving y-axis"
       }
     ],
     "Histograms, Density Plots, and Dot Plots": [
