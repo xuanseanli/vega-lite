@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Average temperatures in Seattle, broken down by hour. Derived from [Seattle Annual Temperate](https://vega.github.io/vega/examples/annual-temperature/) example from the Vega example gallery.",
+  "title": "Seattle Annual Temperatures",
+  "data": {"url": "data/seattle-temps.csv"},
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false, "domain": false}
+  },
+  "spacing": {"row": 1},
+  "facet": {
+    "row": {
+      "field": "date",
+      "timeUnit": "hours",
+      "type": "nominal",
+      "title": "Hour",
+      "sort": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "header": {
+        "labelAngle": 0,
+        "labelPadding": 2,
+        "titlePadding": -4,
+        "labelAlign": "left",
+        "labelExpr": "hours(datum.value) == 0 ? 'Midnight' : hours(datum.value) == 12 ? 'Noon' : timeFormat(datum.value, '%I:%M %p')"
+      }
+    }
+  },
+  "spec": {
+    "mark": "area",
+    "width": 800,
+    "height": 25,
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": "Month",
+        "axis": {"labelExpr": "timeFormat(datum.value, '%b')"}
+      },
+      "y": {
+        "field": "temp",
+        "type": "quantitative",
+        "scale": {"zero": false},
+        "axis": {"title": null, "labels": false, "ticks": false}
+      }
+    }
+  }
+}
