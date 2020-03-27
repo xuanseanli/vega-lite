@@ -156,6 +156,16 @@
           }
         }
       },
+      "signals": [
+        {
+          "name": "height",
+          "update": "bandspace(datum[\"distinct_b\"], 0, 0) * child_y_step"
+        },
+        {
+          "name": "width",
+          "update": "bandspace(datum[\"distinct_a\"], 0, 0) * child_x_step"
+        }
+      ],
       "marks": [
         {
           "name": "child_marks",
